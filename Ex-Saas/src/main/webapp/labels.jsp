@@ -16,16 +16,28 @@
 <html>
 <head>
 <title>Labels</title>
+<style>
+b,th{
+  text-shadow: 2px 2px red;
+}
+table,th{
+width: 100%;
+  border-collapse: collapse;
+    border: 2px solid black;
+}
+
+</style>
 </head>
 <body>
-<body style="background-color:#FAFBB0;">
+<body style="background-color:LightBlue;">
 </body>
+<center>
 	<table>
 		<tr>
-			<td align="center"><b style="color: blue;"> Software as a Service: Google Cloud Vision API
+			<th align="center"><b style="color: black;"> Software as a Service - Cloud Vision API
 
  
-		</b></td>
+		</b></th>
 		</tr>
 		<tr>
 			<td><br></td>
@@ -37,7 +49,7 @@
 		<tr>
 			<center>Image Uploaded </center>
 			
-			<center><img src="<%=request.getAttribute("imageUrl")%>"></center>
+			<center><img src="<%=request.getAttribute("imageUrl")%>" width=150px height=150px></center>
 		</tr>
 		<tr>
 			<td><br></td>
@@ -49,10 +61,10 @@
 			List<EntityAnnotation> imageLabels = (List<EntityAnnotation>) request.getAttribute("imageLabels");
 		%>
 		<tr>
-			<td> List of detected labels </td>
-			<td></td>
+			<th> List of detected labels </th></tr>
+			<tr>
 			<td>
-				<table border="2">
+				<table>
 					<tr>
 						<td>Label</td>
 						<td>Score</td>
@@ -74,6 +86,6 @@
 			<td><a href="/">Reset</</a></td>
 		</tr>
 	</table>
-
+</center>
 </body>
 </html>
